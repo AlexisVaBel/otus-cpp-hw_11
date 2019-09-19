@@ -1,5 +1,14 @@
 cmake_minimum_required(VERSION 3.5)
-project(async VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+
+
+project(async)
+
+if ($ENV{TRAVIS_BUILD_NUMBER})
+ project(${PROJECT_NAME} VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER})
+else ($ENV{TRAVIS_BUILD_NUMBER})
+ project(${PROJECT_NAME}  VERSION 0.0.1)
+endif ($ENV{TRAVIS_BUILD_NUMBER})
+
 
 find_package( Threads )
 

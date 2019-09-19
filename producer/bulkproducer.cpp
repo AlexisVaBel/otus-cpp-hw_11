@@ -16,10 +16,10 @@ void BulkProducer::addItm(std::shared_ptr<ContextItm> itm)
 void BulkProducer::run()
 {
     while (m_bRun) {
-        if(BULK_PROD_MAX_RELAX < m_relaxCnt) {
-            m_bRun = false;
-            finish_it();
-        }
+//        if(BULK_PROD_MAX_RELAX < m_relaxCnt) {
+//            m_bRun = false;
+//            finish_it();
+//        }
         auto procsCnt = 0;
         m_mutex.lock();
         if(! m_queueItms.empty()){

@@ -7,7 +7,7 @@ find_package( Threads )
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_library(${PROJECT_NAME} SHARED async/async.cpp async/async.h context/contextholder.h context/contextitm.h datahodor/bulkholder.h consumer/consumtofile.h consumer/consumtoterminal.h consumer/consumtofile.cpp consumer/consumtoterminal.cpp processor/cmdacceptor.h producer/bulkproducer.h producer/bulkproducer.cpp)
+add_library(${PROJECT_NAME} SHARED src_async/async.cpp src_async/async.h context/contextholder.h context/contextitm.h datahodor/bulkholder.h consumer/consumtofile.h consumer/consumtoterminal.h consumer/consumtofile.cpp consumer/consumtoterminal.cpp processor/cmdacceptor.h producer/bulkproducer.h producer/bulkproducer.cpp)
 
 #add_executable(${PROJECT_NAME} main.cpp)
 

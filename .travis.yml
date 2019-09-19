@@ -1,10 +1,7 @@
  dist: xenial
  language: cpp
  compiler: clang
- env:
-   global:
-     - DOXYFILE: $TRAVIS_BUILD_DIR/doc/Doxyfile
-     - GH_REPO_REF: github.com/AlexisVaBel/otus-cpp-hw_11.git
+
 
  before_script:
          - sudo apt update
@@ -15,16 +12,7 @@
          - cmake .
          - cmake --build .
          - cmake --build . --target package
-         - doxygen Doxyfile 2>&1 | tee doxygen.log
  deploy:
-         - provider: pages
-           skip_cleanup: true
-           github_token: $GITHUB_TOKEN
-           keep_history: true
-           local-dir: $TRAVIS_BUILD_DIR/html
-           on:
-            branch: gh-pages
-
          - provider: script
            skip_cleanup: true
            script:
